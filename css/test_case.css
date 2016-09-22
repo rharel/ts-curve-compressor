@@ -1,0 +1,32 @@
+#test-container
+{
+    display: inline-block;
+    text-align: left;
+}
+#control-buttons
+{
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: lightblue;
+    text-align: left;
+}
+
+.view
+{
+    display: inline-block;
+    max-width: 300px;
+}
+.view-canvas
+{
+    border: 1px solid black;
+}
+.view-description
+{
+    text-align: center;
+}
+.vertex-count
+{
+    text-align: left;
+    color: dimgrey;
+}
