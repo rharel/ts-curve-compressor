@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cubic Bezier Test | CurveCompressor.js</title>
+
+    <link rel="stylesheet" type="text/css"
+          href="css/test_case.css">
+
+    <script type="text/javascript" src="../../dist/CurveCompressor.js"></script>
+    <script type="text/javascript" src="js/bezier.min.js"></script>
+    <script type="text/javascript" src="js/Renderer.js"></script>
+    <script type="text/javascript" src="js/TestCase.js"></script>
+    <script>
+        (function()
+        {
+            var CONTROL_POINTS =
+            [
+                {x:  0.2, y:  0.2},
+                {x:  0.4, y:  1.8},
+                {x:  0.6, y: -0.8},
+                {x:  0.8, y:  0.8}
+            ];
+            var CURVE = new Bezier.Curve(CONTROL_POINTS);
+            var ORIGINAL_RESOLUTION = 1000;
+            var ORIGINAL_OUTLINE = CURVE.outline
+            (   0.0,  // t0
+                1.0,  // t1
+                1.0 / ORIGINAL_RESOLUTION  // dt
+            );
+
+            window.addEventListener('load', function()
+            {
+                var test = new TestCase(ORIGINAL_OUTLINE);
+                test.compression.minimum_tolerance = 0.00001;
+                test.compression.maximum_tolerance = 0.512;
+                test.compression.tolerance = 0.016;
+                test.rendering.vertices_visible = true;
+                test.initialize();
+            });
+        })();
+    </script>
+</head>
+<body>
+<h1>Cubic Bezier Test</h1>
+<div id="test-container">
+    <div id="control-buttons">
+        Error tolerance:
+        <button id="tolerance-increase-button">+</button>
+        <button id="tolerance-decrease-button">-</button>
+        <br>
+        Show vertices:
+        <input type="checkbox"
+               id="vertex-visibility-checkbox"
+               title="vertex-visibility">
+    </div>
+    <br>
+    <div class="view">
+        <div class="view-description">
+            compressed curve
+        </div>
+        <canvas class="view-canvas"
+                id="compressed-curve-canvas"
+                width="300" height="300">
+
+            Your browser does not support HTML5 canvas :(
+        </canvas>
+        <div class="vertex-count">
+            vertex count:
+            <span id="compressed-curve-vertex-count"></span>
+        </div>
+    </div>
+    <div class="view">
+        <div class="view-description">
+            original curve at high resolution
+        </div>
+        <canvas class="view-canvas"
+                id="original-curve-canvas"
+                width="300" height="300">
+
+            Your browser does not support HTML5 canvas :(
+        </canvas>
+        <div class="vertex-count">
+            vertex count:
+            <span id="original-curve-vertex-count"></span>
+        </div>
+    </div>
+</div>
+</body>
+</html>
