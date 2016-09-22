@@ -1,0 +1,20 @@
+{
+  "name": "curve-compressor",
+  "version": "1.0.0",
+  "description": "Intelligent sampling of 2D general curves.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rharel/ts-curve-compressor"
+  },
+  "keywords": [
+    "curve",
+    "bezier",
+    "compression"
+  ],
+  "author": "Raoul Harel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rharel/ts-curve-compressor/issues"
+  },
+  "homepage": "https://github.com/rharel/ts-curve-compressor"
+}
