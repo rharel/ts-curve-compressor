@@ -1,0 +1,14 @@
+{
+  "compilerOptions":
+  {
+    "module": "system",
+    "outFile": "../dist/CurveCompressor.js",
+    "sourceMap": true,
+
+    "declaration": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "removeComments": true
+  }
+}
