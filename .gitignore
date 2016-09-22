@@ -6,3 +6,6 @@ node_modules/
 
 ## Source maps ##
 *.js.map
+
+## Source js ##
+src/*.js
