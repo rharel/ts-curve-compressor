@@ -1,0 +1,8 @@
+## IDE-related ##
+.idea/
+
+## NPM ##
+node_modules/
+
+## Source maps ##
+*.js.map
